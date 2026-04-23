@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin · GOintegro Musicala 2026</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+
+<body>
+
+  <!-- ══ Pantalla de Login ══════════════════════════════════ -->
+  <div id="loginScreen" class="authScreen" hidden>
+    <div class="authCard card">
+      <div class="brand__mark brand__mark--logo" style="width:64px;height:64px;margin:0 auto 18px">
+        <img src="./logo.png" alt="Musicala"
+          onerror="this.closest('.brand__mark').classList.add('is-fallback');this.remove();" />
+        <span class="brand__fallback">M</span>
+      </div>
+      <h2 style="margin:0 0 6px;letter-spacing:-.3px;font-size:22px">Admin · GOintegro</h2>
+      <p class="muted" style="margin:0 0 24px;font-size:13.5px">Musicala 2026 · Solo cuentas autorizadas</p>
+      <button class="btn btn--primary" id="btnLogin" style="width:100%;gap:10px">
+        <svg width="18" height="18" viewBox="0 0 48 48" style="flex-shrink:0"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.32-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.68 28.18A13.9 13.9 0 0 1 10.8 24c0-1.45.25-2.86.88-4.18v-5.7H4.34A23.93 23.93 0 0 0 0 24c0 3.86.92 7.5 2.56 10.73l7.12-5.52z" opacity=".9"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.34 5.7C13.42 14.62 18.27 10.75 24 10.75z"/></svg>
+        Ingresar con Google
+      </button>
+      <p class="muted tiny" style="margin:14px 0 0;text-align:center">Acceso solo para el equipo Musicala</p>
+    </div>
+  </div>
+
+  <!-- ══ Sin autorización ══════════════════════════════════ -->
+  <div id="unauthorizedScreen" class="authScreen" hidden>
+    <div class="authCard card">
+      <div style="font-size:52px;text-align:center;margin-bottom:14px">🚫</div>
+      <h2 style="margin:0 0 8px;font-size:20px">Sin acceso</h2>
+      <p class="muted" id="unauthMsg" style="margin:0 0 22px;font-size:13.5px">Esta cuenta no está autorizada.</p>
+      <button class="btn btn--ghost" id="btnLogoutUnauth" style="width:100%">Cambiar cuenta / Salir</button>
+      <div style="margin-top:12px;text-align:center">
+        <a href="./index.html" class="muted tiny" style="text-decoration:underline">Ver página de beneficios</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ Panel Admin ════════════════════════════════════════ -->
+  <div id="adminPanel" hidden>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div class="brand">
+          <div class="brand__mark brand__mark--logo" aria-label="Musicala">
+            <img src="./logo.png" alt="Logo Musicala"
+              onerror="this.closest('.brand__mark').classList.add('is-fallback');this.remove();" />
+            <span class="brand__fallback">M</span>
+          </div>
+          <div class="brand__text">
+            <div class="brand__title">Admin · GOintegro 2026</div>
+            <div class="brand__subtitle" id="adminUserEmail">—</div>
+          </div>
+        </div>
+        <div class="topbar__actions">
+          <a class="btn btn--ghost" href="./index.html" target="_blank">Página pública ↗</a>
+          <button class="btn btn--soft" id="btnExportCSV">Exportar CSV</button>
+          <button class="btn btn--primary" id="btnNewClaim">+ Registrar afiliado</button>
+          <button class="btn btn--ghost danger" id="btnLogout">Salir</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- Stats -->
+      <div class="statsRow" id="statsRow">
+        <div class="stat">
+          <div class="stat__k">Total registros</div>
+          <div class="stat__v" id="statTotal">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat__k">Clases grupales</div>
+          <div class="stat__v" id="statGRU">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat__k">AutoMusicala</div>
+          <div class="stat__v" id="statAUT">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat__k">Personalizadas</div>
+          <div class="stat__v" id="statPER">—</div>
+        </div>
+      </div>
+
+      <!-- Tabla de registros -->
+      <div class="card" style="margin-top:16px;padding:16px">
+        <div class="tableHeader">
+          <h3 style="margin:0">Registros 2026</h3>
+          <input class="searchInput" id="searchInput" type="search" placeholder="Buscar nombre, email, código…" />
+        </div>
+
+        <div class="tableWrap" style="margin-top:14px">
+          <table class="table" id="claimsTable">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Fecha</th>
+                <th>Beneficio</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>WhatsApp</th>
+                <th>Área</th>
+                <th>Registrado por</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="claimsBody">
+              <tr><td colspan="9" class="muted" style="text-align:center;padding:28px">Cargando…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ══ Modal: Registrar afiliado ════════════════════════ -->
+  <dialog class="modal" id="claimModal">
+    <div class="modal__card">
+      <div class="modal__head">
+        <div>
+          <div class="modal__title">Registrar afiliado GOintegro</div>
+          <div class="modal__subtitle">Completa los datos — se guarda en Firebase y genera el código</div>
+        </div>
+        <button class="iconBtn" type="button" id="btnClaimClose" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal__body">
+        <div class="row">
+          <label class="field">
+            <span>Beneficio *</span>
+            <select id="fBenefit" required>
+              <option value="" disabled selected>Selecciona un beneficio</option>
+              <option value="GRUPALES">Clases grupales — 20% primer mes + 5% permanente</option>
+              <option value="AUTOMUSICALA">AutoMusicala — 1 mes gratuito</option>
+              <option value="PERSONALIZADAS">Personalizadas — 5% por 12 meses</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Área *</span>
+            <select id="fArea" required>
+              <option value="" disabled selected>Selecciona un área</option>
+              <option>Música</option>
+              <option>Danza</option>
+              <option>Artes Plásticas</option>
+              <option>Teatro</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="row">
+          <label class="field">
+            <span>Nombre completo *</span>
+            <input id="fName" type="text" required placeholder="Ej: Ana García" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span>Email *</span>
+            <input id="fEmail" type="email" required placeholder="afiliado@correo.com" autocomplete="off" />
+          </label>
+        </div>
+
+        <div class="row">
+          <label class="field">
+            <span>Celular (WhatsApp) *</span>
+            <input id="fPhone" type="tel" required placeholder="3001234567" inputmode="numeric" />
+          </label>
+          <label class="field">
+            <span>Documento (opcional)</span>
+            <input id="fDoc" type="text" placeholder="CC / CE" />
+          </label>
+        </div>
+
+        <label class="field" style="margin-bottom:10px">
+          <span>Notas (opcional)</span>
+          <textarea id="fNotes" rows="2" placeholder="Horario preferido, instrumento, nivel…"></textarea>
+        </label>
+
+        <div class="alert" id="claimAlert" hidden></div>
+      </div>
+      <div class="modal__foot">
+        <button class="btn btn--ghost" type="button" id="btnClaimCancel">Cancelar</button>
+        <button class="btn btn--primary" type="button" id="btnClaimSave">Registrar y generar código</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ══ Modal: Comprobante ════════════════════════════════ -->
+  <dialog class="modal" id="receiptModal">
+    <div class="modal__card">
+      <div class="modal__head">
+        <div>
+          <div class="modal__title">Afiliado registrado ✅</div>
+          <div class="modal__subtitle">Código generado — copia o envía por WhatsApp</div>
+        </div>
+        <button class="iconBtn" type="button" id="btnReceiptClose" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal__body">
+        <div class="receipt" id="receiptContent"></div>
+        <div class="receiptActions">
+          <button class="btn btn--soft" id="btnCopyReceipt">Copiar mensaje</button>
+          <a class="btn btn--primary" id="btnWhats" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Firebase SDKs (compat v10) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="./admin.js"></script>
+</body>
+</html>

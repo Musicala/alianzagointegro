@@ -6,44 +6,37 @@
   <title>GOintegro · Beneficios Musicala (2026)</title>
   <link rel="stylesheet" href="./styles.css" />
   <meta name="theme-color" content="#0C41C4" />
-  <meta name="description" content="Guía rápida de beneficios GOintegro 2026 para Musicala. Uso interno + redención con comprobante." />
+  <meta name="description" content="Guía de beneficios GOintegro 2026 para Musicala. Elige tu beneficio y contáctanos." />
 </head>
 
 <body>
   <header class="topbar">
     <div class="topbar__inner">
       <div class="brand">
-        <!-- Logo Musicala: pon logo.png en la misma carpeta -->
         <div class="brand__mark brand__mark--logo" aria-label="Musicala">
-          <img
-            src="./logo.png"
-            alt="Logo Musicala"
-            loading="eager"
-            decoding="async"
-            onerror="this.closest('.brand__mark').classList.add('is-fallback'); this.remove();"
-          />
+          <img src="./logo.png" alt="Logo Musicala" loading="eager" decoding="async"
+            onerror="this.closest('.brand__mark').classList.add('is-fallback'); this.remove();" />
           <span class="brand__fallback" aria-hidden="true">M</span>
         </div>
-
         <div class="brand__text">
           <div class="brand__title">Musicala × GOintegro</div>
           <div class="brand__subtitle">
             Beneficios <strong>2026</strong> · Elige 1 beneficio por año
-            <span class="badge" title="Esta guía está enfocada solo en 2026">Solo 2026</span>
+            <span class="badge" title="Solo 2026">Solo 2026</span>
           </div>
         </div>
       </div>
 
       <div class="topbar__actions">
-        <button class="btn btn--ghost" id="btnViewClaims" type="button" title="Ver registros guardados en este dispositivo">
-          Registros
-        </button>
-        <button class="btn btn--soft" id="btnCopySummary" type="button" title="Copia un resumen listo para enviar por WhatsApp o correo">
+        <button class="btn btn--ghost" id="btnCopySummary" type="button" title="Copia un resumen para WhatsApp o correo">
           Copiar resumen
         </button>
-        <button class="btn btn--primary" id="btnStart" type="button" title="Abrir formulario (atajo: Ctrl/⌘ + K)">
-          Elegir beneficio
+        <button class="btn btn--soft" id="btnHowTo" type="button">
+          ¿Cómo redimir?
         </button>
+        <a class="btn btn--ghost adminLink" href="./admin.html" title="Acceso exclusivo para el equipo Musicala">
+          Equipo ↗
+        </a>
       </div>
     </div>
   </header>
@@ -53,8 +46,8 @@
       <div class="hero__copy">
         <h1>Tu camino artístico, con descuento 💙</h1>
         <p>
-          Si eres afiliado(a) de <strong>GOintegro</strong>, aquí puedes escoger tu beneficio para <strong>2026</strong>.
-          La redención se gestiona con el equipo Musicala (sede Pasadena) y te queda un comprobante al final.
+          Si eres afiliado(a) de <strong>GOintegro</strong>, aquí puedes conocer tu beneficio para <strong>2026</strong>.
+          La redención se gestiona con el equipo Musicala (sede Pasadena) y recibirás un comprobante al finalizar.
         </p>
 
         <div class="chips" role="list" aria-label="Resumen rápido">
@@ -66,16 +59,16 @@
         </div>
 
         <div class="hero__cta">
-          <button class="btn btn--primary" id="btnStart2" type="button">Elegir beneficio</button>
-          <button class="btn btn--soft" id="btnHow" type="button">Ver condiciones</button>
+          <button class="btn btn--primary" id="btnHowTo2" type="button">¿Cómo redimir?</button>
+          <button class="btn btn--soft" id="btnConditions" type="button">Ver condiciones</button>
         </div>
 
         <div class="miniGuide" aria-label="Guía rápida para el equipo">
-          <div class="miniGuide__title">Guía rápida (equipo)</div>
+          <div class="miniGuide__title">Proceso de redención</div>
           <div class="miniGuide__body">
-            <div class="miniGuide__item"><span class="dot"></span> Confirmar que es afiliado GOintegro.</div>
-            <div class="miniGuide__item"><span class="dot"></span> Elegir <strong>1</strong> beneficio (solo 2026).</div>
-            <div class="miniGuide__item"><span class="dot"></span> Generar comprobante y enviar mensaje al chat interno / WhatsApp.</div>
+            <div class="miniGuide__item"><span class="dot"></span> Acércate al equipo Musicala en sede Pasadena.</div>
+            <div class="miniGuide__item"><span class="dot"></span> El equipo verificará tu afiliación y registrará tu beneficio.</div>
+            <div class="miniGuide__item"><span class="dot"></span> Recibirás tu código de comprobante por WhatsApp o correo.</div>
           </div>
         </div>
       </div>
@@ -94,8 +87,7 @@
           <div class="stat__v">Sede · Hogar · Virtual</div>
         </div>
         <div class="note">
-          <strong>Tip:</strong> esto queda en este dispositivo (localStorage). Si lo quieren “serio” multiusuario,
-          se conecta a Google Sheets y listo.
+          <strong>Registro centralizado:</strong> el equipo Musicala gestiona todos los comprobantes para garantizar la validez de tu beneficio.
         </div>
       </div>
     </section>
@@ -105,7 +97,7 @@
         <div class="benefit__tag">Clases grupales en sede</div>
         <h2>20% en el primer mes + 5% permanente (2026)</h2>
         <p>
-          Inicia clases grupales presenciales en sede Pasadena. Elige horario, en grupos pequeños (2 a 8).
+          Inicia clases grupales presenciales en sede Pasadena. Horarios flexibles, grupos pequeños (2 a 8 personas).
         </p>
         <ul class="list">
           <li><strong>20%</strong> exclusivo en el primer mes (nuevo estudiante)</li>
@@ -113,7 +105,7 @@
           <li>Áreas: Música, Danza, Artes Plásticas, Teatro</li>
         </ul>
         <div class="benefit__footer">
-          <button class="btn btn--soft pickBtn" type="button" data-pick="GRUPALES">Elegir este</button>
+          <button class="btn btn--soft howToBtn" type="button">Quiero este</button>
         </div>
       </article>
 
@@ -124,11 +116,11 @@
           Un mes gratis en la plataforma AutoMusicala para aprender a tu ritmo desde casa.
         </p>
         <ul class="list">
-          <li>Instrumentos como piano, violín, guitarra, batería, bajo y más</li>
+          <li>Piano, violín, guitarra, batería, bajo y más</li>
           <li>Ideal para aprender con autonomía 🎧📲</li>
         </ul>
         <div class="benefit__footer">
-          <button class="btn btn--soft pickBtn" type="button" data-pick="AUTOMUSICALA">Elegir este</button>
+          <button class="btn btn--soft howToBtn" type="button">Quiero este</button>
         </div>
       </article>
 
@@ -136,14 +128,14 @@
         <div class="benefit__tag">Clases personalizadas</div>
         <h2>5% de descuento por 12 meses</h2>
         <p>
-          Clases diseñadas especialmente para cada estudiante, con horarios flexibles y acompañamiento del equipo docente.
+          Clases diseñadas para cada estudiante, con horarios flexibles y acompañamiento docente.
         </p>
         <ul class="list">
           <li><strong>5%</strong> de descuento por <strong>12 meses</strong></li>
           <li>Modalidades: Presencial · Musicala Hogar · Virtual</li>
         </ul>
         <div class="benefit__footer">
-          <button class="btn btn--soft pickBtn" type="button" data-pick="PERSONALIZADAS">Elegir este</button>
+          <button class="btn btn--soft howToBtn" type="button">Quiero este</button>
         </div>
       </article>
     </section>
@@ -157,7 +149,7 @@
         <li>Los beneficios aplican solo para <strong>estudiantes nuevos</strong>, excepto el 5% en clases grupales, que continúa vigente durante 2026 mientras el estudiante esté activo.</li>
       </ul>
       <p class="muted">
-        Esto es un registro de solicitud. La confirmación final depende de validación de afiliación GOintegro y coordinación con Musicala.
+        La confirmación final depende de validación de afiliación GOintegro y coordinación con Musicala.
       </p>
     </section>
 
@@ -168,208 +160,61 @@
           <p class="muted">Carrera 45a #103B-34 · Bogotá</p>
         </div>
         <div class="footer__hint">
-          Hecho para que el equipo no improvise 😌. Si quieren multiusuario real, toca conectar a Sheets/DB.
+          Para registrar tu beneficio, acércate al equipo Musicala o escríbenos. Ellos gestionan el registro y te envían el comprobante 💙
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Modal: Form -->
-  <dialog class="modal" id="modal">
-    <form class="modal__card" id="form" method="dialog">
+  <!-- Modal: ¿Cómo redimir? -->
+  <dialog class="modal" id="howToModal">
+    <div class="modal__card">
       <div class="modal__head">
         <div>
-          <div class="modal__title">Redimir beneficio GOintegro</div>
-          <div class="modal__subtitle" id="pickedLabel">Beneficio: —</div>
+          <div class="modal__title">¿Cómo redimir tu beneficio?</div>
+          <div class="modal__subtitle">Es fácil — el equipo Musicala te acompaña</div>
         </div>
-        <button class="iconBtn" type="button" id="btnClose" aria-label="Cerrar">✕</button>
+        <button class="iconBtn" type="button" id="btnHowToClose" aria-label="Cerrar">✕</button>
       </div>
-
       <div class="modal__body">
-        <div class="row">
-          <label class="field">
-            <span>¿Para qué año vas a redimir? *</span>
-            <select id="year" required>
-              <option value="2026" selected>2026</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span>Área de interés *</span>
-            <select id="area" required>
-              <option value="" selected disabled>Selecciona</option>
-              <option>Música</option>
-              <option>Danza</option>
-              <option>Artes Plásticas</option>
-              <option>Teatro</option>
-            </select>
-          </label>
+        <div class="howToSteps">
+          <div class="howToStep">
+            <div class="howToStep__num">1</div>
+            <div>
+              <strong>Escoge tu beneficio</strong>
+              <p class="muted" style="margin:4px 0 0">Revisa las opciones en esta página y decide cuál quieres para 2026.</p>
+            </div>
+          </div>
+          <div class="howToStep">
+            <div class="howToStep__num">2</div>
+            <div>
+              <strong>Contacta al equipo Musicala</strong>
+              <p class="muted" style="margin:4px 0 0">Acércate a sede Pasadena o escríbenos. El equipo verificará tu afiliación GOintegro.</p>
+            </div>
+          </div>
+          <div class="howToStep">
+            <div class="howToStep__num">3</div>
+            <div>
+              <strong>Recibe tu comprobante</strong>
+              <p class="muted" style="margin:4px 0 0">El equipo registrará tu beneficio y te enviará un código de comprobante por WhatsApp o correo.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="row">
-          <label class="field">
-            <span>Nombre completo *</span>
-            <input id="name" type="text" required placeholder="Ej: Cata Caballero" />
-          </label>
-
-          <label class="field">
-            <span>Email *</span>
-            <input id="email" type="email" required placeholder="tu@correo.com" />
-          </label>
+        <div class="howToContact">
+          <div class="howToContact__title">📍 Musicala · Sede Pasadena</div>
+          <div class="muted" style="font-size:13px">Carrera 45a #103B-34 · Bogotá</div>
         </div>
 
-        <div class="row">
-          <label class="field">
-            <span>Celular (WhatsApp) *</span>
-            <input id="phone" type="tel" required placeholder="Ej: 3001234567" inputmode="numeric" />
-          </label>
-
-          <label class="field">
-            <span>Documento (opcional)</span>
-            <input id="doc" type="text" placeholder="CC / CE" />
-          </label>
-        </div>
-
-        <label class="field">
-          <span>Notas (opcional)</span>
-          <textarea id="notes" rows="3" placeholder="Horario preferido, instrumento, nivel, etc."></textarea>
-        </label>
-
-        <label class="check">
-          <input id="accept" type="checkbox" required />
-          <span>Acepto condiciones: 1 beneficio por año, no transferible, y no repetir el mismo beneficio en el mismo año.</span>
-        </label>
-
-        <div class="alert" id="alert" hidden></div>
+        <p class="muted tiny" style="margin-top:12px">
+          Recuerda: 1 beneficio por año, no acumulable, no transferible, no repetir el mismo beneficio en el mismo año.
+        </p>
       </div>
-
       <div class="modal__foot">
-        <button class="btn btn--ghost" type="button" id="btnCancel">Cancelar</button>
-        <button class="btn btn--primary" type="submit" id="btnSubmit">Generar comprobante</button>
-      </div>
-    </form>
-  </dialog>
-
-  <!-- Modal: Receipt -->
-  <dialog class="modal" id="receiptModal">
-    <div class="modal__card">
-      <div class="modal__head">
-        <div>
-          <div class="modal__title">Comprobante generado ✅</div>
-          <div class="modal__subtitle">Guárdalo o envíalo al equipo Musicala</div>
-        </div>
-        <button class="iconBtn" type="button" id="btnReceiptClose" aria-label="Cerrar">✕</button>
-      </div>
-
-      <div class="modal__body">
-        <div class="receipt" id="receipt"></div>
-
-        <div class="receiptActions">
-          <button class="btn btn--soft" type="button" id="btnCopy">Copiar mensaje</button>
-          <a class="btn btn--primary" id="btnWhats" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
-        </div>
-
-        <p class="muted tiny">
-          Nota: este MVP guarda registros solo en este dispositivo (localStorage). Si lo abren desde otro computador, no ve esos registros.
-        </p>
+        <button class="btn btn--primary" id="btnHowToOk">Entendido</button>
       </div>
     </div>
   </dialog>
-
-  <!-- Modal: Claims -->
-  <dialog class="modal" id="claimsModal">
-    <div class="modal__card">
-      <div class="modal__head">
-        <div>
-          <div class="modal__title">Registros (este dispositivo)</div>
-          <div class="modal__subtitle">Exporta CSV si lo necesitas</div>
-        </div>
-        <button class="iconBtn" type="button" id="btnClaimsClose" aria-label="Cerrar">✕</button>
-      </div>
-
-      <div class="modal__body">
-        <div class="claimsTools">
-          <button class="btn btn--soft" type="button" id="btnExport">Exportar CSV</button>
-          <button class="btn btn--ghost danger" type="button" id="btnClear">Borrar todo</button>
-        </div>
-
-        <div class="tableWrap">
-          <table class="table" id="claimsTable">
-            <thead>
-              <tr>
-                <th>Fecha</th>
-                <th>Año</th>
-                <th>Beneficio</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>WhatsApp</th>
-                <th>Área</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-
-        <p class="muted tiny">
-          Si quieren “multiusuario real”, toca conectar a Sheets/DB. La magia no existe, solo la facturación. 🙂
-        </p>
-      </div>
-    </div>
-  </dialog>
-
-  <script>
-    // UX mini extra sin tocar tu app.js:
-    // - Copiar resumen 2026
-    // - Atajo Ctrl/⌘ + K para abrir modal
-    (function(){
-      const btn = document.getElementById('btnCopySummary');
-      const start = document.getElementById('btnStart');
-
-      const summary =
-`✨ Beneficios Musicala para afiliados GOintegro (2026)
-
-1) 🎸 Clases grupales en sede:
-   - 20% de descuento en el primer mes (nuevo estudiante)
-   - 5% de descuento durante 2026 mientras siga afiliado y activo
-   - Áreas: Música, Danza, Artes Plásticas, Teatro
-   - Sede Pasadena: Carrera 45a #103B-34
-
-2) 💻 AutoMusicala (Online):
-   - 1 mes gratuito en la plataforma
-
-3) 🏡 Clases personalizadas:
-   - 5% de descuento por 12 meses
-   - Modalidades: Sede / Musicala Hogar / Virtual
-
-Condiciones:
-- 1 beneficio por afiliado/a en 2026
-- No acumulables ni transferibles
-- No se puede repetir el mismo beneficio en el mismo año
-- Aplica a estudiantes nuevos (excepto el 5% grupales, vigente mientras esté activo en 2026)
-`;
-
-      btn?.addEventListener('click', async () => {
-        try{
-          await navigator.clipboard.writeText(summary);
-          btn.textContent = 'Resumen copiado ✅';
-          setTimeout(() => btn.textContent = 'Copiar resumen', 1200);
-        }catch(e){
-          alert('No se pudo copiar automáticamente. Copia manual:\n\n' + summary);
-        }
-      });
-
-      document.getElementById('btnPrint')?.addEventListener('click', () => window.print());
-
-      document.addEventListener('keydown', (e) => {
-        const isK = (e.key || '').toLowerCase() === 'k';
-        const meta = e.metaKey || e.ctrlKey;
-        if (meta && isK){
-          e.preventDefault();
-          start?.click();
-        }
-      });
-    })();
-  </script>
 
   <script src="./app.js"></script>
 </body>

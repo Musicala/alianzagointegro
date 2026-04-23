@@ -1,11 +1,11 @@
 /* =============================================================================
   GOintegro x Musicala — styles.css (LIGHT · Premium)
   - Musicala tokens (Mozart/Bach/Beethoven/Brahms)
-  - 100% light UI ✅
-  - Glass suave + sombras finas + micro-UX ✅
-  - Modales <dialog> pro ✅
-  - Tablas/CSV/claims ✅
-  - Accesibilidad: focus visible, targets, reduced motion ✅
+  - 100% light UI
+  - Glass suave + sombras finas + micro-UX
+  - Modales <dialog> pro
+  - Tablas/CSV/claims
+  - Accesibilidad: focus visible, targets, reduced motion
 ============================================================================= */
 
 :root{
@@ -53,6 +53,7 @@
 /* Reset-ish */
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
+[hidden]{ display:none !important; }
 body{
   margin:0;
   color:var(--ink);
@@ -60,7 +61,6 @@ body{
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 
-  /* Musicala Light background */
   background:
     radial-gradient(1000px 540px at 10% 10%, rgba(12,65,196,.12), transparent 60%),
     radial-gradient(900px 520px at 92% 18%, rgba(104,13,191,.12), transparent 55%),
@@ -72,7 +72,6 @@ img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
 hr{ border:none; border-top:1px solid var(--line); }
 
-/* Selection */
 ::selection{
   background: rgba(12,65,196,.16);
 }
@@ -121,7 +120,6 @@ hr{ border:none; border-top:1px solid var(--line); }
   overflow:hidden;
 }
 
-/* Logo support */
 .brand__mark--logo{
   padding: 0;
   background: rgba(255,255,255,.9);
@@ -289,7 +287,6 @@ hr{ border:none; border-top:1px solid var(--line); }
   line-height: 1.45;
 }
 
-/* Mini Guide (index mejorado) */
 .miniGuide{
   margin-top: 12px;
   border-radius: var(--r18);
@@ -428,7 +425,7 @@ hr{ border:none; border-top:1px solid var(--line); }
 }
 
 /* =========================================================
-   Buttons (micro-UX pro)
+   Buttons
 ========================================================= */
 .btn{
   min-height: var(--tap);
@@ -497,7 +494,6 @@ hr{ border:none; border-top:1px solid var(--line); }
   background: rgba(206,0,113,.06);
 }
 
-/* Disabled submit state */
 .btn:disabled{
   opacity:.55;
   cursor:not-allowed;
@@ -576,7 +572,6 @@ hr{ border:none; border-top:1px solid var(--line); }
 .iconBtn:active{ transform: translateY(1px); }
 .iconBtn:focus-visible{ outline:none; box-shadow: var(--focus); }
 
-/* Form */
 .row{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -610,25 +605,6 @@ input:focus, select:focus, textarea:focus{
   background: #fff;
 }
 
-/* Checkbox section */
-.check{
-  display:flex;
-  gap: 10px;
-  align-items:flex-start;
-  margin-top: 8px;
-  padding: 10px 12px;
-  border-radius: var(--r16);
-  border: 1px dashed rgba(16,24,40,.18);
-  background: rgba(12,65,196,.05);
-}
-.check input{
-  margin-top: 2px;
-  width: 16px;
-  height: 16px;
-  accent-color: var(--mozart);
-}
-
-/* Alert */
 .alert{
   margin-top: 10px;
   padding: 10px 12px;
@@ -639,7 +615,6 @@ input:focus, select:focus, textarea:focus{
   font-weight: 900;
 }
 
-/* Receipt */
 .receipt{
   border-radius: var(--r18);
   border: 1px solid rgba(16,24,40,.12);
@@ -656,15 +631,8 @@ input:focus, select:focus, textarea:focus{
 }
 
 /* =========================================================
-   Claims table
+   Table
 ========================================================= */
-.claimsTools{
-  display:flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 12px;
-}
-
 .tableWrap{
   overflow:auto;
   border-radius: var(--r16);
@@ -698,7 +666,7 @@ input:focus, select:focus, textarea:focus{
 }
 
 /* =========================================================
-   Scrollbars (subtle)
+   Scrollbars
 ========================================================= */
 *::-webkit-scrollbar{ height: 10px; width: 10px; }
 *::-webkit-scrollbar-thumb{
@@ -722,19 +690,14 @@ input:focus, select:focus, textarea:focus{
 }
 
 /* =========================================================
-   Print (para que lo puedan imprimir limpio)
+   Print
 ========================================================= */
 @media print{
   .topbar{ position: static; }
   .topbar__actions{ display:none !important; }
   .btn{ display:none !important; }
-  body{
-    background: #fff !important;
-  }
-  .card{
-    box-shadow: none !important;
-    background: #fff !important;
-  }
+  body{ background: #fff !important; }
+  .card{ box-shadow: none !important; background: #fff !important; }
   .benefit::before, .hero::before{ display:none !important; }
 }
 
@@ -747,4 +710,127 @@ input:focus, select:focus, textarea:focus{
     scroll-behavior: auto !important;
   }
   .benefit:hover{ transform:none !important; }
+}
+
+/* =========================================================
+   Auth screens (admin.html)
+========================================================= */
+.authScreen{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.authCard{
+  width: 100%;
+  max-width: 380px;
+  padding: 30px 26px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.authCard h2{
+  letter-spacing: -.3px;
+}
+
+/* =========================================================
+   Admin — Stats row
+========================================================= */
+.statsRow{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+@media (max-width: 700px){
+  .statsRow{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =========================================================
+   Admin — Table header + search
+========================================================= */
+.tableHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.searchInput{
+  border-radius: var(--r14);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.88);
+  padding: 9px 13px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  width: 220px;
+  transition: box-shadow .14s ease, border-color .14s ease;
+}
+.searchInput:focus{
+  outline: none;
+  box-shadow: var(--focus);
+  border-color: rgba(12,65,196,.25);
+  background: #fff;
+}
+
+/* =========================================================
+   Link discreto "Equipo" en topbar publico
+========================================================= */
+.adminLink{
+  font-size: 12.5px;
+  opacity: .50;
+  transition: opacity .16s ease;
+}
+.adminLink:hover{ opacity: 1; }
+
+/* =========================================================
+   Modal Publico — Como redimir (pasos)
+========================================================= */
+.howToSteps{
+  display: grid;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.howToStep{
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.howToStep__num{
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--mozart), var(--beethoven));
+  color: #fff;
+  font-weight: 900;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 18px rgba(12,65,196,.22);
+}
+
+.howToStep strong{
+  display: block;
+  margin-bottom: 3px;
+  letter-spacing: -.1px;
+}
+
+.howToContact{
+  padding: 12px 14px;
+  border-radius: var(--r16);
+  border: 1px solid rgba(16,24,40,.12);
+  background: linear-gradient(135deg, rgba(12,65,196,.08), rgba(104,13,191,.06));
+}
+
+.howToContact__title{
+  font-weight: 900;
+  margin-bottom: 4px;
+  letter-spacing: -.1px;
 }
